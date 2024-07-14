@@ -1,0 +1,5 @@
+configs:
+  MINIO_URL: "minio.default.svc.cluster.local:9000"
+secrets:
+  MINIO_ACCESS_KEY: "xxxx" # note: create your own
+  MINIO_SECRET_KEY: "xxxx" # note: create your own

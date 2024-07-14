@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: lol-wiki-parser
+spec:
+  template:
+    spec:
+      containers:
+        - name: lol-wiki-parser
+          image: lol-wiki-parser
+          imagePullPolicy: Never # using local image
+          envFrom:
+            - configMapRef:
+                name: common-configs
+            - secretRef:
+                name: common-secrets
+          env:
+            - name: MINIO_BUCKET_NAME
+              value: "lol-wiki-parser"
+            - name: MAX_NUM_CHAMPIONS
+              value: "3"
+            - name: DEBUG
+              value: "0"
+            - name: RICH
+              value: "0"
+      restartPolicy: Never
+      backoffLimit: 0

@@ -1,0 +1,3 @@
+[submodule "src/lol-wiki-parser"]
+	path = src/lol-wiki-parser
+	url = git@github.com:nixonyung/lol-wiki-parser.git
